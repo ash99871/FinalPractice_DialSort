@@ -35,7 +35,7 @@ int main()
 
             double time_dial = chrono::duration<double, milli>(end - start).count();
 
-            // 🔹 Mostrar 50 ordenados
+            // Mostrar 50 ordenados
             cout << "\nPrimeros 50 datos ORDENADOS:\n";
             for (int i = 0; i < 300; i++) {
                 cout << datos[i] << " ";
@@ -44,6 +44,26 @@ int main()
 
             // tiempo
             cout << "\nDialSort Tiempo: " << time_dial << " ms" << endl;
+
+            //desordenar
+            datos = gen_uniform(n, U, 123);
+
+            //radix sort
+            auto one = chrono::high_resolution_clock::now();
+            radixSort(datos);
+            auto two = chrono::high_resolution_clock::now();
+
+            double time_radix=chrono::duration<double, milli>(two - one).count();
+
+            // Mostrar 50 ordenados
+            cout << "\nPrimeros 50 datos ORDENADOS:\n";
+            for (int i = 0; i < 300; i++) {
+                cout << datos[i] << " ";
+            }
+            cout << endl;
+
+            cout << "\nDialSort Tiempo: " << time_radix << " ms" << endl;
+            
         }
     }
 
