@@ -2,6 +2,7 @@
 #include <vector>
 #include <chrono>
 #include "dialSort.cpp"
+#include "radixSort.cpp"
 
 using namespace std;
 
@@ -62,7 +63,7 @@ int main()
             }
             cout << endl;
 
-            cout << "\nDialSort Tiempo: " << time_radix << " ms" << endl;
+            cout << "\nRadixSort Tiempo: " << time_radix << " ms" << endl;
             
         }
     }
