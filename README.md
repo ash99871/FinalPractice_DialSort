@@ -1,0 +1,89 @@
+# Benchmark Sorting Algorithms – DialSort vs RadixSort
+
+# Integrantes: Maybeth López y Sofía Robayo Parra
+
+## Descripción:
+
+Este proyecto implementa y compara el rendimiento de dos algoritmos de ordenamiento:
+
+- DialSort
+- RadixSort
+
+El objetivo es analizar su comportamiento bajo diferentes condiciones de entrada, evaluando su eficiencia en términos de tiempo de ejecución, estabilidad y uso de memoria.
+
+---
+
+## Enfoque de Implementación:
+
+El sistema se divide en tres partes principales:
+
+- **Algoritmos de ordenamiento**
+  - `dialSort.cpp`: implementación de DialSort
+  - `radixSort.cpp`: implementación de RadixSort
+
+- **Benchmark**
+  - `benchmark.cpp`: ejecuta pruebas con diferentes tipos de datos
+
+- **Main**
+  - `main.cpp`: punto de entrada del programa
+
+Se generaron datasets automáticamente sin necesidad de archivos externos.
+
+---
+
+## Tipos de Datos Evaluados
+
+Se probaron los algoritmos con diferentes distribuciones:
+
+- **Uniforme** → datos aleatorios
+- **Skewed** → muchos valores repetidos
+- **Ordenado** → datos ya ordenados
+- **Inverso** → orden descendente
+
+---
+
+## Métricas Evaluadas:
+
+Para cada algoritmo se midieron:
+
+- Tiempo promedio (ms)
+- Desviación estándar
+- Throughput (datos procesados por segundo)
+- Uso de memoria (teórico)
+
+---
+
+## Instrucciones de Ejecución
+
+### Requisitos:
+- C++
+- CMake
+- CLion (opcional)
+
+### Compilar y ejecutar:
+
+```bash
+mkdir build
+cd build
+cmake ..
+make
+./FinalPractice_DialSort_main
+
+---
+## Resultados
+
+### Ejemplo de salida:
+
+
+--- INVERSO ---
+
+ALGORITMO        PROMEDIO(ms)   STD DEV     DATOS/SEG
+--------------------------------------------------------
+DialSort         17.7           1.2          56000000
+RadixSort        214.6          10.4         4600000
+
+COMPARACION:
+-- Mejor en tiempo: DialSort
+Memoria DialSort: O(U) = 1000
+Memoria RadixSort: O(n) = 1000000
+-- Mejor en memoria: DialSort
