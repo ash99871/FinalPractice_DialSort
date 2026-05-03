@@ -68,7 +68,7 @@ cd build
 cmake ..
 make
 ./FinalPractice_DialSort_main
-
+```
 ---
 ## Resultados
 
@@ -87,3 +87,38 @@ COMPARACION:
 Memoria DialSort: O(U) = 1000
 Memoria RadixSort: O(n) = 1000000
 -- Mejor en memoria: DialSort
+
+---
+## Análisis y Comparación
+
+### DialSort
+
+- Complejidad: **O(n + U)**
+- Excelente rendimiento cuando el rango de valores (U) es pequeño
+- Muy rápido en datasets con valores repetidos
+
+### RadixSort
+
+- Complejidad: **O(n · d)**
+- Rendimiento estable
+- No depende directamente de U
+
+---
+
+## ¿Cuál algoritmo fue mejor?
+
+**DialSort fue el algoritmo con mejor rendimiento en la mayoría de los casos evaluados**, especialmente cuando:
+
+- El universo de valores (U) es pequeño
+- Existen muchos valores repetidos
+
+Sin embargo, RadixSort presenta un comportamiento más estable cuando el rango de valores es grande.
+
+---
+
+## Uso de Memoria
+
+- **DialSort:** O(U)
+- **RadixSort:** O(n)
+
+DialSort es más eficiente en memoria cuando **U < n**.
