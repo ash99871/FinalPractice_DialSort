@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
-#include "dialSort.cpp"
+#include "dialSort.h"
+#include "radixSort.h"
 
 using namespace std;
 
