@@ -1,6 +1,6 @@
 # Benchmark Sorting Algorithms – DialSort vs RadixSort
 
-# Integrantes: Maybeth López y Sofía Robayo Parra
+# Integrantes: Maybeth López y Ashly Sofía Robayo Parra
 
 ## Descripción:
 
