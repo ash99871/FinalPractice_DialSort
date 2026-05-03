@@ -78,10 +78,10 @@ make
 ```text
 --- INVERSO ---
 
-ALGORITMO        PROMEDIO(ms)   STD DEV     DATOS/SEG
---------------------------------------------------------
-DialSort         17.7           1.2          56000000
-RadixSort        214.6          10.4         4600000
+ALGORITMO        Promedio(ms)   Desviacion Estandar     Datos por segundo
+-------------------------------------------------------------------------
+DialSort           17.7                    1.2            56000000
+RadixSort          214.6                   10.4           4600000
 
 COMPARACION:
 -- Mejor en tiempo: DialSort
