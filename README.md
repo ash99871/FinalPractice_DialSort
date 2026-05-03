@@ -75,6 +75,7 @@ make
 ### Ejemplo de salida:
 
 
+```text
 --- INVERSO ---
 
 ALGORITMO        PROMEDIO(ms)   STD DEV     DATOS/SEG
@@ -87,7 +88,7 @@ COMPARACION:
 Memoria DialSort: O(U) = 1000
 Memoria RadixSort: O(n) = 1000000
 -- Mejor en memoria: DialSort
-
+```
 ---
 ## Análisis y Comparación
 
@@ -104,7 +105,14 @@ Memoria RadixSort: O(n) = 1000000
 - No depende directamente de U
 
 ---
+## Uso de Memoria
 
+- **DialSort:** O(U)
+- **RadixSort:** O(n)
+
+DialSort es más eficiente en memoria cuando **U < n**.
+
+---
 ## ¿Cuál algoritmo fue mejor?
 
 **DialSort fue el algoritmo con mejor rendimiento en la mayoría de los casos evaluados**, especialmente cuando:
@@ -114,11 +122,3 @@ Memoria RadixSort: O(n) = 1000000
 
 Sin embargo, RadixSort presenta un comportamiento más estable cuando el rango de valores es grande.
 
----
-
-## Uso de Memoria
-
-- **DialSort:** O(U)
-- **RadixSort:** O(n)
-
-DialSort es más eficiente en memoria cuando **U < n**.
