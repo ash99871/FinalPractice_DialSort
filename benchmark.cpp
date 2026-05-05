@@ -6,6 +6,8 @@
 #include <chrono>
 #include <cmath>
 #include <atomic>
+#include <cstdlib>
+#include <cstddef>
 using namespace std;
 
 
