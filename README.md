@@ -2,6 +2,11 @@
 
 # Integrantes: Maybeth López y Ashly Sofía Robayo Parra
 
+## Link del simulador:
+
+https://comparisonofalgorithms.lovable.app
+
+
 ## Descripción:
 
 Este proyecto implementa y compara el rendimiento de dos algoritmos de ordenamiento:
