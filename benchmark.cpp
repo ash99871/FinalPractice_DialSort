@@ -5,7 +5,23 @@
 #include <vector>
 #include <chrono>
 #include <cmath>
+#include <atomic>
 using namespace std;
+
+
+std::atomic<size_t> memoria_actual{0};
+std::atomic<size_t> memoria_pico{0};
+
+void* operator new(size_t size) {
+    memoria_actual += size;
+    if (memoria_actual > memoria_pico) memoria_pico = (size_t)memoria_actual;
+    return malloc(size);
+}
+
+void operator delete(void* memory, size_t size) noexcept {
+    memoria_actual -= size;
+    free(memory);
+}
 
 void compararCaso(string nombre, vector<int> datos, int U) {
 
@@ -83,13 +99,45 @@ void compararCaso(string nombre, vector<int> datos, int U) {
     else
         cout << "-- Mejor en tiempo: RadixSort\n";
 
-    cout << "Memoria DialSort: O(U) = " << U << endl;
-    cout << "Memoria RadixSort: O(n) = " << n << endl;
+    cout << "Memoria teórica DialSort: O(U) = " << U << endl;
+    cout << "Memoria teórica RadixSort: O(n) = " << n << endl;
 
     if (U < n)
-        cout << "-- Mejor en memoria: DialSort\n";
+        cout << "-- Mejor en memoria teórica: DialSort\n";
     else
-        cout << "-- Mejor en memoria: RadixSort\n";
+        cout << "-- Mejor en memoria teórica: RadixSort\n";
+
+    //Memoria real
+    memoria_pico = 0; 
+    {
+        auto d1 = datos; 
+        dialsort(d1);    
+    }
+    size_t picoDial = memoria_pico;
+
+    
+    memoria_pico = 0; 
+    {
+        auto d2 = datos; 
+        radixSort(d2);   
+    }
+    size_t picoRadix = memoria_pico;
+
+    
+    cout << "\nANALISIS DE MEMORIA (Pico de uso):" << endl;
+    cout << "DialSort:  " << picoDial << " bytes" << endl;
+    cout << "RadixSort: " << picoRadix << " bytes" << endl;
+
+    if (picoDial < picoRadix) {
+        double ahorro = (double)(picoRadix - picoDial) / picoRadix * 100.0;
+        cout << ">> Ganador en Memoria Real: DialSort (Usa " << ahorro << "% menos RAM)" << endl;
+    } else if (picoRadix < picoDial) {
+        double ahorro = (double)(picoDial - picoRadix) / picoDial * 100.0;
+        cout << ">> Ganador en Memoria Real: RadixSort (Usa " << ahorro << "% menos RAM)" << endl;
+    } else {
+        cout << ">> Empate técnico en uso de memoria real." << endl;
+    }
+    
 }
 
 void Benchmark::run() {
