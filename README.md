@@ -6,7 +6,6 @@
 
 https://comparisonofalgorithms.lovable.app
 
-
 ## Descripción:
 
 Este proyecto implementa y compara el rendimiento de dos algoritmos de ordenamiento:
@@ -15,6 +14,19 @@ Este proyecto implementa y compara el rendimiento de dos algoritmos de ordenamie
 - RadixSort
 
 El objetivo es analizar su comportamiento bajo diferentes condiciones de entrada, evaluando su eficiencia en términos de tiempo de ejecución, estabilidad y uso de memoria.
+
+---
+
+## Estructura del proyecto
+
+```
+
+├── main.cpp          # Punto de entrada y flujo principal
+├── dialSort.h/.cpp  # Implementación del DialSort
+├── radixSort.h/.cpp   # Implementación de RadixSort
+├── benchmark.h/.cpp    # Implementación de las comparaciones 
+└── CMakeLists.txt    # Configuración de compilación
+```
 
 ---
 
