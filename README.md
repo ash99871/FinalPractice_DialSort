@@ -66,7 +66,7 @@ Para cada algoritmo se midieron:
 - Tiempo promedio (ms)
 - Desviación estándar
 - Throughput (datos procesados por segundo)
-- Uso de memoria (teórico)
+- Uso de memoria (teórico y real)
 
 ---
 
