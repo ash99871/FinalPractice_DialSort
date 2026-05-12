@@ -139,3 +139,8 @@ DialSort es más eficiente en memoria cuando **U < n**.
 
 Sin embargo, RadixSort presenta un comportamiento más estable cuando el rango de valores es grande.
 
+
+## Versión del Sistema Operativo :
+
+Windows 11
+
