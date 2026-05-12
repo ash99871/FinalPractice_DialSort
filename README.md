@@ -144,3 +144,8 @@ Sin embargo, RadixSort presenta un comportamiento más estable cuando el rango d
 
 Windows 11
 
+## Versión del Compilador :
+
+MinGW-w64
+
+
